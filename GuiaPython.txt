@@ -1,0 +1,1598 @@
+## IF
+
+if(expressão1):
+	print("expressao verdadeira")
+elif(expressao2):
+	print("expressao 1 falsa e expressao 2 verdadeira")
+else:
+	print("expressao 1  e 2 falsa")
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## IF ANINHADO
+
+if x > 1:
+ if y == 2:
+	print("caiu no if")
+ else:
+	print("caiu no else")
+
+
+if x > 1 and if y == 2:
+	print("caiu no if")
+ else:
+	print("caiu no else")
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## INPUT
+
+nome = input('Digite seu nome:')
+idade = input('Digite sua idade:')
+if int(idade)  > 18:
+	print('Maior de Idade')
+else:
+	print('Menor de Idade')
+
+
+nome = input('Digite seu nome:')
+idade = input('Digite sua idade:')
+if int(idade)  >= 18:
+    print('%s é maior de Idade, com %r anos' %(nome,idade))
+else:
+    print('Menor de Idade')
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## LOOP FOR
+
+for item in serie-de-item
+	if item > 0:
+		executa comando
+
+
+ListaDoMercado = ["Leite", "Frutas", "Carne"]
+for i in ListaDoMercado:
+    print(i)
+
+
+# Imprimindo na tela os números pares da lista de números
+lista = [1,2,3,4,5,6,7,8,9,10]
+for numero in lista:
+    if numero % 2 == 0:
+        print (numero)
+
+
+# Listando os números no intervalo entre 0 e 100, com incremento em 2
+for i in range(0,100,2):  
+    print(i)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## LOOP FOR ANINHADO
+
+# Operando os valores de uma lista com loop for
+listaB = [32,53,85,10,15,17,19]
+soma = 0
+for i in listaB:
+    double_i = i * 2
+    soma += double_i
+
+print(soma)
+
+
+# Contando os itens de uma lista
+lista = [5,6,10,13,17]
+count = 0
+for item in lista:
+    count += 1
+    
+print(count)
+
+
+# Pesquisando em listas
+listaC = [5, 6, 7, 10, 50]
+for item in listaC:
+    if item == 5:
+        print("Número encontrado na lista!")
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## LOOP WHILE
+
+while(expressao1):
+	print("comando executado caso expressao verdadeira")
+
+---------------------------------------------------
+
+# Usando o loop while para imprimir os valores de 0 a 9
+counter = 0
+while counter < 10:
+    print(counter)
+    counter = counter + 1
+
+---------------------------------------------------
+
+# Também é possível usar a claúsula else para encerrar o loop while
+x = 0
+while x < 10:
+    print ('O valor de x nesta iteração é: ', x)
+    print (' x ainda é menor que 10, somando 1 a x')
+    x += 1
+else:
+    print ('Agora o valor é %s, sendo assim maior!' %(x))
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## PASS, BREAK, CONTINUE
+
+# contador = 4 break senao pass
+counter = 0
+while counter < 100:
+    if counter == 4:
+        break
+    else:
+        pass
+    print(counter)
+    counter = counter + 1
+
+
+for verificador in range(1,6):
+    if verificador == 3:
+        continue
+    print(verificador)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## RANGE (repetição)
+
+range(start, stop, step)
+
+start = inicia sequência
+stop = encerra a sequência (não é incluido na lista)
+step = diferença entre cada número na sequência
+
+
+# Imprimindo números pares entre 50 e 101
+for i in range(50, 101, 2):
+    print(i)
+
+lista = ['Morango', 'Banana', 'Abacaxi', 'Uva']
+lista_tamanho = len(lista)
+for i in range(0, lista_tamanho):
+    print(lista[i])
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## FUNÇÕES
+
+def nome_funcao (arg1, arg2):
+	codigo
+	retorno_desejado
+
+---------------------------------------------------
+
+# Definindo uma função com parâmetro
+def primeiraFunc(nome):
+    print('Hello %s' %(nome))
+
+primeiraFunc('Aluno')
+
+---------------------------------------------------
+
+# Definindo uma função com parâmetro imprimindo de 1 a 5
+def funcLeitura():
+    for i in range(0, 5):
+        print("Número " + str(i))
+
+funcLeitura()
+
+---------------------------------------------------
+
+# Variável 
+var_global = 10  # Esta é uma variável global
+def multiply(num1, num2):
+    var_local = num1 * num2   # Esta é uma variável local
+    print(var_local)
+
+multiply(5, 25)
+
+---------------------------------------------------
+
+import math # Importando um pacote de matematica
+
+def numPrimo(num):
+    '''
+    Verificando se um número 
+    é primo. 
+    '''
+    if (num % 2) == 0 and num > 2: 
+        return "Este número não é primo"
+    for i in range(3, int(math.sqrt(num)) + 1, 2): # sqrt = raiz quadrada
+        if (num % i) == 0:
+            return "Este número não é primo"
+    return "Este número é primo"
+
+---------------------------------------------------
+
+# Fazendo split dos dados
+def split_string(text):
+    return text.split(" ")
+
+frase = "Esta função será bastante útil para separar grandes volumes de dados."
+
+# Isso divide a string em uma lista.
+print(split_string(frase))
+
+---------------------------------------------------
+
+# Funções com número variável de argumentos
+def printVarInfo( argumento, *variosparametros ):
+   # Imprimindo o valor do primeiro argumento
+    print ("O parâmetro passado foi: ", argumento)
+   
+   # Imprimindo o valor do segundo argumento 
+    for item in variosparametros:
+        print ("O parâmetro passado foi: ", item)
+    return;
+
+printVarInfo('Chocolate', 'Morango', 'Banana')
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+
+
+## LAMBDA
+
+lambda x:x**2
+
+# Definindo uma expressão lambda
+potencia = lambda num: num**2
+
+---------------------------------------------------
+
+# Invertendo texto
+reverso = lambda s: s[::-1]
+reverso('Python')
+
+---------------------------------------------------
+
+soma = lambda n1, n2: n1 + n2
+
+soma(2,4)
+
+
+===================================================
+===================================================
+===================================================
+
+## ARQUIVOS
+
+open() -> abrir arquivo
+
+# Diretorio C:\DSA\Python\Cap04\Notebooks\arquivos
+
+# Abrindo o arquivo para leitura
+arq1 = open("arquivos/arquivo1.txt", "r") #leitura
+
+# Abrindo arquivo para gravação
+arq2 = open("arquivos/arquivo1.txt", "w") #escrita
+
+# Acrescentando conteúdo
+arq2 = open("arquivos/arquivo1.txt", "a") #acrecentar arquivo (append)
+
+---------------------------------------------------
+
+read() -> leitura do arquvivo
+
+# Lendo o arquivo
+print(arq1.read())
+
+# Ler os primeiros 10 caracteres
+print(arq1.read(10))
+
+---------------------------------------------------
+
+write() -> gravacao no arquvio
+
+# Gravando arquivo
+arq2.write("Testando gravação de arquivos em Python ")
+
+---------------------------------------------------
+
+seek() -> retorna o cursor para o inicio do arquivo
+
+# Retornar para o iníco do arquivo
+print(arq1.seek(0,0))
+
+---------------------------------------------------
+
+readlines() -> linhas do arquivo
+
+---------------------------------------------------
+
+close() -> fecha o arquivo
+
+# Fechando o arquivo
+arq2.close()
+
+---------------------------------------------------
+
+# Dividindo um dataset em colunas
+
+f = open('arquivos/salarios.csv', 'r')
+data = f.read()
+rows = data.split('\n')
+full_data = []
+for row in rows:
+    split_row = row.split(",")
+    full_data.append(split_row)
+print(full_data)
+
+---------------------------------------------------
+
+# Contando o número de colunas de um arquivo
+
+f = open('arquivos/salarios.csv', 'r')
+data = f.read()
+rows = data.split('\n')
+full_data = []
+
+for row in rows:
+    split_row = row.split(",")
+    full_data.append(split_row)
+    first_row = full_data[0]
+count = 0
+
+for column in first_row:
+    count = count + 1
+    
+print(count)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# WITH
+
+# Importando o módulo os
+import os
+
+with open('arquivos/cientista.txt','r') as comandowith:
+    conteudo = comandowith.read()
+# o metodo close() é executado automaticamente
+# conteudo é uma variavel
+
+print(conteudo)
+
+---------------------------------------------------
+
+with open('arquivos/cientista.txt','w') as comandowith:
+    comandowith.write(texto[:21]) # 0 a 21
+    comandowith.write('\n') #quebra de linha
+    comandowith.write(texto[:33]) #0 a 33
+
+# Lendo o arquivo
+comandowith = open('arquivos/cientista.txt','r')
+conteudo = comandowith.read()
+comandowith.close()
+
+print (conteudo)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## PACOTES
+
+
+# PACOTE PANDAS
+
+import pandas as pd
+file2 = "arquivos/salarios.csv"
+df2 = pd.read_csv(file2)
+df2.head()
+
+---------------------------------------------------
+
+# PACOTE CSV
+
+import csv
+
+with open('arquivos/numeros.csv','w') as arquivo:
+    writer = csv.writer(arquivo)
+    writer.writerow(('primeira','segunda','terceira'))
+    writer.writerow((55,93,76)) 
+    writer.writerow((62,14,86))
+
+# Leitura de arquivos csv
+with open('arquivos/numeros.csv','r') as arquivo:
+    leitor = csv.reader(arquivo)
+    for x in leitor:
+        print ('Número de colunas:', len(x))
+        print(x)
+
+# Código alternativo para eventuais problemas com linhas em branco no arquivo
+with open('arquivos/numeros.csv','r', encoding='utf8', newline = '\r\n') as arquivo:
+    leitor = csv.reader(arquivo)
+    for x in leitor:
+        print ('Número de colunas:', len(x))
+        print(x)
+
+# Gerando uma lista com dados do arquivo csv
+with open('arquivos/numeros.csv','r') as arquivo:
+    leitor = csv.reader(arquivo)
+    dados = list(leitor)
+    
+    
+print (dados)
+
+# Impriminfo a partir da segunda linha
+for linha in dados[1:]:
+    print (linha)
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# DATETIME
+
+import datetime
+
+datetime.datetime.now()
+
+print ('Hora  :', datetime.datetime.now().hour)
+print ('Minute:', datetime.datetime.now().minute)
+print ('Segundo:', datetime.datetime.now().second)
+print ('Microsegundo:', datetime.datetime.now().microsecond)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# MAP
+# Aplicando uma função a cada elemento da lista
+
+def somamaisum(s):
+    return (s+1)
+
+numeros = [0, 3, 11, 14]
+
+list(map(somamaisum,numeros))
+#[1, 4, 12, 15]
+
+---------------------------------------------------
+
+# MAP
+
+#usando lambda
+
+list(map(lambda x: (x +1), numeros))
+#[1, 4, 12, 15]
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# REDUCE
+
+from functools import reduce
+
+lista = [47,11,42,13]
+
+def soma(a,b):
+    x = a + b
+    return x
+
+
+reduce(soma, lista)
+#113
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# FILTER
+
+# Criando uma função
+def verificaPar(num):
+    if num % 2 == 0:
+        return True
+    else:
+        return False
+
+
+lista = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+
+
+filter(verificaPar, lista)
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# LIST COMPREHENSION
+
+lst = [x for x in 'python']
+
+lst
+
+---------------------------------------------------
+
+# Converter Celsius para Fahrenheit
+celsius = [0,10,20.1,34.5]
+
+fahrenheit = [ ((float(9)/5)*temp + 32) for temp in celsius ]
+
+fahrenheit
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+
+# ZIP
+
+# Criando duas listas
+x = [1,2,3,4]
+y = [4,5,6]
+
+list(zip(x,y))
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# ENUMERATE
+
+# Criando uma lista
+seq = ['a','b','c']
+
+list(enumerate(seq))
+#[(0, 'a'), (1, 'b'), (2, 'c')]
+
+---------------------------------------------------
+
+# Imprimindo os valores de uma lista com a função enumerate() e seus respectivos índices
+for indice, valor in enumerate(seq):
+    print (indice, valor)
+
+
+for indice, valor in enumerate(seq):
+    if indice >= 2:
+        break
+    else:
+        print (valor)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# TRATAMENTO DE ERROS E EXCEÇÕES
+
+
+# Utilizando try e except
+try:
+    8 + 's'
+except TypeError:
+    print("Operação não permitida")
+
+---------------------------------------------------
+
+# Utilizando try, except e else
+try:
+    f = open('arquivos/testandoerros.txt','w')
+    f.write('Gravando no arquivo')
+except IOError:
+   print ("Erro: arquivo não encontrado ou não pode ser salvo.")
+else:
+   print ("Conteúdo gravado com sucesso!")
+   f.close()
+
+---------------------------------------------------
+
+try:
+    f = open('arquivos/testandoerros.txt','w')
+    f.write('Gravando no arquivo')
+except IOError:
+   print ("Erro: arquivo não encontrado ou não pode ser salvo.")
+else:
+   print ("Conteúdo gravado com sucesso!")
+   f.close()
+finally:
+   print ("Comandos no bloco finally são sempre executados!")
+
+
+---------------------------------------------------
+
+#Exemplo de codigo validando um numero
+
+def askint():
+    while True:
+        try:
+            val = int(input("Digite um número: "))
+        except:
+            print ("Você não digitou um número!")
+            continue
+        else:
+            print ("Obrigado por digitar um número!")
+            break
+        finally:
+            print("Fim da execução!")
+        print (val) 
+
+askint()
+
+
+===================================================
+===================================================
+===================================================
+
+## Orientação a Objetos
+
+Classe = molde, template que define a natureza de um futuro objeto
+
+Instância = objeto criado apartir de uma classe.
+
+Objetos = criados a partir de instâncias de classes
+
+Metodos = Funções
+
+---------------------------------------------------
+
+Exemplo:
+
+Classe = Socio
+
+Atributos = Nome, CPF, Nascimento, Endereço, Telefone
+
+Métodos = Cadastrar(), ConfirmarCadastro(), ValidarSocio(), AlterarCadastro()
+
+Objetos = João, José, Antônio
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# CLASSE
+
+# Criando uma classe chamada Livro
+class Livro():
+    
+    # Este método vai inicializar cada objeto criado a partir desta classe
+    # O nome deste método é __init__
+    # (self) é uma referência a cada atributo de um objeto criado a partir desta classe
+    def __init__(self):
+        
+        # Atributos de cada objeto criado a partir desta classe. 
+        # O self indica que estes são atributos dos objetos
+        self.titulo = 'O Monge e o Executivo'
+        self.isbn = 9988888
+        print("Construtor chamado para criar um objeto desta classe")
+        
+    # Métodos são funções, que recebem como parâmetro atributos do objeto criado    
+    def imprime(self):
+        print("Foi criado o livro %s e ISBN %d" %(self.titulo, self.isbn))
+
+# Criando uma instância da classe Livro
+Livro1 = Livro()
+
+# Atributo do objeto Livro1
+Livro1.titulo
+
+# Método do objeto Livro1
+Livro1.imprime()
+
+---------------------------------------------------
+
+# Criando a classe Funcionario com parâmetros no método construtor
+class Funcionario():
+    def __init__(self, nome, departamento):
+        self.nome = nome
+        self.departamento = departamento
+        print("Construtor chamado para criar um objeto desta classe")
+        
+    def imprime(self):
+        print("Colaborador da AASP " + self.nome + " trabalha no departamento" + self.departamento)
+
+# Criando uma instância da classe Funcionario
+Funcionario1 = Funcionario("Rafael", "TI")
+Funcionario2 = Funcionario("Wendel", "Produtos e Servicos")
+
+# Método do objeto Funcionario1
+Funcionario1.imprime()
+
+# Atributo do objeto Funcionario1
+Funcionario1.departamento
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# OBJETOS
+
+#tem o objeto nome?
+hasattr(Funcionario1, "nome")
+
+
+#update no departamento
+setattr(Funcionario1, "departamento", "Tecnologia")
+
+
+#delete o valor do objeto departamento
+delattr(Funcionario2, "departamento")
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# METODOS
+
+# Criando uma classe chamada Circulo
+class Circulo():
+    
+    # O valor de pi é constante
+    pi = 3.14
+
+    # Quando um objeto desta classe for criado, este método será executado e o valor default do raio será 5.
+    def __init__(self, raio = 5):
+        self.raio = raio 
+
+    # Esse método calcula a área. Self utiliza os atributos deste mesmo objeto
+    def area(self):
+        return (self.raio * self.raio) * Circulo.pi
+
+    # Método para gerar um novo raio
+    def setRaio(self, novo_raio):
+        self.raio = novo_raio
+
+    # Método para obter o raio do círculo
+    def getRaio(self):
+        return self.raio
+
+# Criando o objeto circ. Uma instância da classe Circulo()
+circ = Circulo()
+
+# Imprimindo o raio
+print ('O raio é: ', circ.getRaio())
+
+# Imprimindo a area
+print('Area igual a: ', circ.area())
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# HERANCA
+
+
+# Criando a classe Animal - Super-classe
+class Animal():
+    
+    def __init__(self):
+        print("Animal criado")
+
+    def Identif(self):
+        print("Animal")
+
+    def comer(self):
+        print("Comendo")
+
+# Criando a classe Cachorro - Sub-classe
+class Cachorro(Animal): #Chama a Super-Classe
+    
+    def __init__(self):
+        Animal.__init__(self)
+        print("Objeto Cachorro criado")
+
+    def Identif(self):
+        print("Cachorro")
+
+    def latir(self):
+        print("Au Au!")
+
+# Criando um objeto (Instanciando a classe)
+rex = Cachorro()
+
+===================================================
+===================================================
+===================================================
+
+## Banco de dados
+
+# Conexão com SQL Server
+
+import pyodbc 
+# Some other example server values are
+# server = 'localhost\sqlexpress' # for a named instance
+# server = 'myserver,port' # to specify an alternate port
+server = 'tcp:gti2004424\sql2017' 
+database = 'TESTE' 
+username = 'dsa' 
+password = 'abc1234' 
+cnxn = pyodbc.connect('DRIVER={SQL Server Native Client 11.0};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
+cursor = cnxn.cursor()
+
+
+cursor.execute("SELECT * from sys.tables;") 
+row = cursor.fetchone() 
+while row: 
+    print (row[0])
+    row = cursor.fetchone()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Bulk Insert
+
+server = 'tcp:poseidon.cbwndpuop4x8.us-east-2.rds.amazonaws.com' 
+database = 'LAB' 
+username = 'convidado' 
+password = 'mevun@9120' 
+cnxn = pyodbc.connect('DRIVER={SQL Server Native Client 11.0};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
+cursor = cnxn.cursor()
+
+cursor.executemany('INSERT INTO dbo.stagePageViewCustomerLeads([ip], [time], [url], [device_id], [refer], [lead_id], [registered_at], [credit_decision], [credit_decision_at], [signed_at], [revenue] ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', StagePageviewCustomerLeads.values.tolist())
+
+
+cnxn.commit()
+cursor.close()
+cnxn.close()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+
+#SQLite
+
+# Importando o módulo de acesso ao SQLite
+import sqlite3
+
+# Cria uma conexão com o banco de dados. 
+# Se o banco de dados não existir, ele é criado neste momento.
+con = sqlite3.connect('escola.db') #cria um banco
+
+# Criando um cursor 
+# (Um cursor permite percorrer todos os registros em um conjunto de dados)
+cur = con.cursor()
+
+# Cria uma instrução sql
+sql_create = 'create table cursos '\
+'(id integer primary key, '\
+'titulo varchar(100), '\
+'categoria varchar(140))'
+
+# Executando a instrução sql no cursor
+cur.execute(sql_create)
+
+# Criando outra sentença SQL para inserir registros
+sql_insert = 'insert into cursos values (?, ?, ?)'
+
+# Dados
+recset = [(1000, 'Ciência de Dados', 'Data Science'),
+          (1001, 'Big Data Fundamentos', 'Big Data'),
+          (1002, 'Python Fundamentos', 'Análise de Dados')]
+
+# Inserindo os registros
+for rec in recset:
+    cur.execute(sql_insert, rec)
+
+# Grava a transação
+con.commit()
+
+# Criando outra sentença SQL para selecionar registros
+sql_select = 'select * from cursos'
+
+# Seleciona todos os registros e recupera os registros
+cur.execute(sql_select)
+dados = cur.fetchall() #pega todos registros e salva no objeto dados
+
+# Mostra
+for linha in dados:
+    print ('Curso Id: %d, Título: %s, Categoria: %s \n' % linha)
+
+# Fecha a conexão
+con.close()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+import pyodbc 
+# Some other example server values are
+# server = 'localhost\sqlexpress' # for a named instance
+# server = 'myserver,port' # to specify an alternate port
+server = 'tcp:gti2004424\sql2017' 
+database = 'TESTE' 
+username = 'dsa' 
+password = 'abc1234' 
+conexao = pyodbc.connect('DRIVER={SQL Server Native Client 11.0};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
+cursor = conexao.cursor()
+
+def data_insert():
+    cursor.execute("INSERT INTO [dbo].[cliente] ([nome] ,[idade]) VALUES ('rafael',33)")
+    conexao.commit()
+    cursor.close()
+    conexao.close()
+
+# Inserir dados
+data_insert()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Insert com variavel
+
+def data_insert_var():
+    new_date = datetime.datetime.now()
+    new_prod_name = 'Monitor'
+    new_valor = random.randrange(50,100)
+    c.execute("INSERT INTO produtos (date, prod_name, valor) VALUES (?, ?, ?)", (new_date, new_prod_name, new_valor))
+    conn.commit()
+
+# Gerando valores e inserindo na tabela
+for i in range(10):
+    data_insert_var()
+    time.sleep(1)
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Leitura de dados
+
+def leitura_todos_dados():
+    cursor.execute("SELECT * FROM cliente")
+    for linha in cursor.fetchall():
+        print(linha)
+
+leitura_todos_dados()
+
+
+# Leitura de colunas específicos
+def leitura_colunas():
+    cursor.execute("SELECT * FROM cliente")
+    for linha in cursor.fetchall():
+        print(linha[1])    
+
+leitura_colunas()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# update
+
+def atualiza_dados():
+    cursor.execute("UPDATE cliente SET nome = 'Wendel' WHERE id_cli = 3")
+    conexao.commit()
+
+atualiza_dados()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Delete
+def exclui_dados():
+    cursor.execute("delete from cliente WHERE nome = 'User Teste'")
+    conexao.commit()
+
+exclui_dados()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Conexão com MongoDB
+
+# OPCAO 1
+
+from pymongo import MongoClient
+import urllib.parse
+username = urllib.parse.quote_plus('dba-mongo')
+password = urllib.parse.quote_plus('mon603291#')
+client = MongoClient('mongodb://%s:%s@ec2-13-58-179-150.us-east-2.compute.amazonaws.com:27017' % (username, password))
+db = client.LogSSO
+try: db.command("serverStatus")
+except Exception as e: print(e)
+else: print("You are connected!")
+client.close()
+
+# OPCAO 2
+
+from pymongo import MongoClient
+client = MongoClient('172.19.2.125:27017',
+                      username='recortes',
+                      password='oJozk4lzsz',
+                      authSource='Recortes',
+                      authMechanism='SCRAM-SHA-1')
+db = client.Recortes
+try: db.command("listCollections")
+except Exception as e: print(e)
+else: print("You are connected!")
+client.close()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+!pip install pymongo
+
+# Importamos o MongoClient para conectar nossa aplicação ao MongoDB
+from pymongo import MongoClient
+
+# Estabelecemos a conexão ao Banco de Dados
+import urllib.parse
+username = urllib.parse.quote_plus('dsa')
+password = urllib.parse.quote_plus('abc1234')
+conn = MongoClient('mongodb://%s:%s@172.19.2.125:27017/LAB' % (username, password))
+
+# Vamos criar o banco de dados 
+db = conn.LAB
+
+# Uma coleção é um grupo de documentos armazenados no MongoDB 
+collection = db.posts
+
+#Inserindo dados
+import datetime
+post1 = {"codigo": "ID-9987725",
+        "prod_name": "Geladeira",
+        "marcas": ["brastemp", "consul", "elecrolux"],
+        "data_cadastro": datetime.datetime.utcnow()}
+post_id = collection.insert_one(post1)
+
+
+#Consultando os dados
+collection.find_one({"prod_name": "Geladeira"})
+
+# A função find() retorna um cursor e podemos então navegar pelos dados
+for i in collection.find():
+    print(i)
+
+# Verificando o nome do banco de dados
+db.name
+
+# Listando as coleções disponíveis
+db.collection_names()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Importamos o Módulo PyMongo
+import pymongo
+
+# Criando a conexão com o MongoDB (neste caso, conexão padrão)
+import urllib.parse
+username = urllib.parse.quote_plus('dsa')
+password = urllib.parse.quote_plus('abc1234')
+client_con = pymongo.MongoClient('mongodb://%s:%s@172.19.2.125:27017/LAB' % (username, password))
+
+# Definindo o objeto db
+db = client_con.LAB
+
+# Criando uma coleção
+db.create_collection("NovaCollection")
+
+# Inserindo um documento na coleção criada
+db.NovaCollection.insert_one({
+   'titulo': 'MongoDB com Python', 
+   'descricao': 'MongoDB é um Banco de Dados NoSQL',
+   'by': 'Data Science Academy',
+   'url': 'http://www.datascienceacademy.com.br',
+   'tags': ['mongodb', 'database', 'NoSQL'],
+   'likes': 100
+})
+
+# Retornando o documento criado
+db.NovaCollection.find_one()
+
+===================================================
+===================================================
+===================================================
+
+## PYTHON PARA ANALISE DE DADOS
+
+## NUMPY
+# Utilizado para computação matematica
+
+# ARRAY
+
+# Importando o NumPy
+import numpy as np
+
+# Array criado a partir de uma lista:
+vetor1 = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8])
+
+print(vetor1)
+
+# Alterando um elemento do array
+vetor1[0] = 100
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# A função arange cria um vetor contendo uma progressão aritmética a partir de um intervalo - start, stop, step
+vetor2 = np.arange(0., 4.5, .5)
+
+print(vetor2)
+
+x = np.arange(1, 10, 0.25)
+print(x)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Criando array de zeros
+print(np.zeros(10))
+
+# Retorna 1 nas posições em diagonal e 0 no restante
+z = np.eye(3)
+
+# Os valores passados como parâmetro, formam uma diagonal
+d = np.diag(np.array([1, 2, 3, 4]))
+
+# Array de valores booleanos
+b = np.array([True, False, False, True])
+
+# O método linspace (linearly spaced vector) retorna um número de 
+# valores igualmente distribuídos no intervalo especificado 
+np.linspace(0, 10)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# NP - MATRIZ
+
+# Criando uma matriz
+matriz = np.array([[1,2,3],[4,5,6]]) 
+
+print(matriz)
+
+# Verificando elementos da matriz
+print(matriz.shape)
+
+# Verificar tamanho da matriz
+matriz.size
+
+
+# Verificar tipo da matriz
+print(matriz.dtype)
+
+# Verificando um registro
+# indice começa no zero
+print(matriz[1,0])
+4
+
+# Alterando um elemento da matriz
+matriz[1,0] = 100
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# NP - RANDOM
+
+print(np.random.rand(10)) #array
+
+print(np.random.randn(5,5)) #matriz
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# NP - DATA SET
+
+import os
+filename = os.path.join('iris.csv')
+
+# No Windows use !more iris.csv. Mac ou Linux use !head iris.csv
+!more iris.csv
+#!more iris.csv
+
+# Carregando um dataset para dentro de um array
+arquivo = np.loadtxt(filename, delimiter=',', usecols=(0,1,2,3), skiprows=1)
+print (arquivo)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# NP - ESTATISTICA
+
+# Criando um array
+A = np.array([15, 23, 63, 94, 75])
+
+# Em estatística a média é o valor que aponta para onde mais se concentram os dados de uma distribuição.
+np.mean(A)
+
+# O desvio padrão mostra o quanto de variação ou "dispersão" existe em 
+# relação à média (ou valor esperado). 
+# Um baixo desvio padrão indica que os dados tendem a estar próximos da média.
+# Um desvio padrão alto indica que os dados estão espalhados por uma gama de valores.
+np.std(A)
+
+# Variância de uma variável aleatória é uma medida da sua dispersão 
+# estatística, indicando "o quão longe" em geral os seus valores se 
+# encontram do valor esperado
+np.var(A)
+
+#Soma
+np.sum(A)
+
+# Soma acumulada dos elementos
+np.cumsum(A)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+#  NP - FATIANDO MATRIZES
+
+b = np.arange(10)
+
+# [start:end:step]
+b[2:9:3] 
+
+# Somando um elemento ao array
+np.array([1, 2, 3]) + 1.5
+
+# Repetindo os elementos de um array
+np.repeat(l, 3)
+
+# Repetindo os elementos de um array
+np.tile(l, 3)
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## PANDAS
+# Manipulação de dados
+
+from pandas import Series #somente Series
+
+import pandas as pd #pacote inteiro
+
+pd.__version__
+
+# Criando uma série sem especificar os índices
+Obj = Series([67, 78, -56, 13])
+
+Obj
+
+type(Obj)
+
+Obj.values
+
+Obj.index
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Criando uma série e especificando os índices
+Obj2 = Series([67, 78, -56, 13], index = ['a', 'b', 'c', 'd'])
+
+# Filtro no Pandas
+Obj2[Obj2 > 3]
+
+Obj2['b']
+
+'d' in Obj2
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Criando uma série de dados passando um dicionário como parâmetro
+dict = {'Futebol':5200, 'Tenis': 120, 'Natação':698, 'Volleyball':1550}
+
+# Criando uma série a partir de um dicionário
+Obj3 = Series(dict)
+
+Obj3
+
+# Existe valores Nulos
+pd.isnull(Obj4)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# PANDAS - DATAFRAMES
+
+from pandas import DataFrame
+
+data = {'Estado': ['Santa Catarina', 'Paraná', 'Goiás', 'Bahia', 'Minas Gerais'], 
+        'Ano': [2002, 2003, 2004, 2005, 2006], 
+        'População': [1.5, 1.7, 3.6, 2.4, 2.9]}
+
+frame = DataFrame(data)
+
+frame
+
+type(frame)
+
+frame.columns
+
+DataFrame(data, columns=['Ano', 'Estado', 'População'])
+
+frame.index
+
+frame.values
+
+frame['Ano']
+
+frame[:2]
+
+frame['Débito'] = [100, 100, 200, 250, 300]
+
+# Resumo do Dataframe
+frame2.describe()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# localizar o que tem no indice = 'quatro'
+frame2.loc['quatro']
+
+# localizar o que tem no numero do indice = 2
+frame2.iloc[2]
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Importando CSV com Pandas
+df = pd.read_csv('salarios.csv', sep = ',',names = ['coluna1', 'coluna2', 'coluna3', 'coluna4'])
+
+# Exportar CSV com Pandas
+import sys
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Importando Excel com Pandas
+
+# Import
+import os
+
+# Verificando se o arquivo existe. No Windows use !type teste-df-output.xlsx
+!head teste-df-output.xlsx
+
+# Gerando um arquivo excel a partir de um Dataframe
+df.to_excel('teste-df-output.xlsx', sheet_name='Sheet1')
+
+# Lendo o arquivo excel para um Dataframe
+newDf2 = pd.read_excel('teste-df-output.xlsx', 'Sheet1', index_col=None, na_values=['NA'])
+
+newDf2.head()
+
+os.remove('teste-df-output.xlsx')
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Criando um Dataframe com Datas (Data, Dia, Mes, Ano)
+dates = pd.date_range('20190201', periods = 40)
+df = pd.DataFrame(np.random.randn(40,4), index = dates, columns = list('ABCD'))
+
+# Calculando a soma acumulada
+df.apply(np.cumsum)
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+Merge/Join com Pandas
+
+# Merge de Dataframes
+left = pd.DataFrame({'chave': ['chave1', 'chave2'], 'coluna1': [1, 2]})
+right = pd.DataFrame({'chave': ['chave1', 'chave2'], 'coluna2': [4, 5]})
+pd.merge(left, right, on='chave')
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+
+# Adicionando um elemento ao Dataframe
+df = pd.DataFrame(np.random.randn(8, 4), columns=['A', 'B', 'C', 'D'])
+
+s = df.iloc[3]
+
+# Adicionando um elemento ao Dataframe
+df.append(s, ignore_index=True)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## MATPLOTLIB
+
+# O matplotlib.pyplot é uma coleção de funções e estilos que fazem com que o Matplotlib funcione como o Matlab.
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+# Grafico de Linha
+
+x = [1, 4, 5]
+y = [3, 7, 2]
+
+plt.plot(x, y, label= 'Linha') # ou plt.plot(x, y) # valores do plot  
+plt.xlabel('Variável 1') #label x
+plt.ylabel('Variável 2') #label y
+plt.title('Teste Plot') #titulo
+plt.legend()
+plt.show()
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+
+# Grafico de Barra
+
+x2 = [1,3,5,7,9]
+y2 = [7,8,2,4,2]
+
+plt.bar(x, y, label = 'Barras', color = 'b')
+plt.legend()
+plt.show()
+
+plt.bar(x, y, label = 'Barras1', color = 'r')
+plt.bar(x2, y2, label = 'Barras2', color = 'b')
+plt.legend()
+plt.show()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Histograma
+
+variacao = [10,20,20,30,30,30,40,40,50]
+
+plt.hist(variacao, bins, histtype = 'stepfilled', rwidth = 0.8)
+plt.show()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Scatterplot
+
+x = [1,2,3,4,5,6,7,8]
+y = [5,2,4,5,6,8,4,8]
+
+plt.scatter(x, y, label = 'Pontos', color = 'r', marker = 'o', s = 100)
+plt.legend()
+plt.show()
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+# Pizza
+
+fatias = [7, 2, 2, 13]
+atividades = ['dormir','comer','trabalhar','passear']
+cores = ['c','m','r','k']
+
+plt.pie(fatias, labels = atividades, colors = cores, startangle = 90, shadow = True, explode = (0,0.1,0,0))
+plt.show()
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## SCIKIT-LEARN
+
+#Utilizada para criar modelos Machine Learning
+
+#Aprendizagem Supervisionada, quando o programa é treinado sobre um conjunto de dados pré-definido (Classificação e Regressão). Tem uma entrada e Saída
+
+##Classificação receber uma entrafa e atribuir um rotulo a ela. Usados para por exemplo sim ou não
+
+##Regressão usada quando o valor que está sendo previsto segue espectro continuo. Responde perguntas como "quanto custa?" ou "quantos existem?"
+
+#Aprendizagem Não-Supervisionada, quando o programa pode automaticamente encontrar padrões e relações em dados, sem que possua qualquer conhecimento prévio (Clustering). Somente tem entrada a saida o algoritmo que prevê.
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## PREPARAÇÃO DOS DADOS
+
+#Identificação das Variáveis - Entrada, Saida, Alvo,...
+
+#Tratamento de Valores Missing - Valores ausentes
+
+#Tratamento de Outliers
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## TENSORFLOW
+
+
+cmd:
+conda create -n tensorflow pip python=3.5
+
+
+pip install tensorflow
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+## MACHINE LEARNING
+
+# Aprendizado Supervisionado
+
+Previsão de valores
+Precisa conter entrada e saida (variavel target), a partir de novos dados de entrada gera a saida correta
+
+Exemplo:
+Dados de entrada de uma casa (m2, qtd de quartos, ano da contrução), dados de saida (preço da casa). Apos ML dando m2,qtd de quartos, ano conseguimos prever o preço da casa.
+
+CLASSIFICAÇÃO - alvo variaveis qualitativas ou categoricas. Perguntas como: É um homem sim ou não
+
+REGRESSÃO - alvo valores numericos. Perguntas como: quanto custa? quantos existem?
+
+# Aprendizado Não Supervisionado
+
+Identificação de grupos ou clusters
+Contem apenas os dados de entrada, NÃO possui variáveis target
+
+
+
+
+
+
+
+
